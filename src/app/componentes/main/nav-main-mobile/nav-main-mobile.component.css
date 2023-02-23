@@ -1,0 +1,66 @@
+.tab2 {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;  
+}
+
+.nav_mobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .nav_mobile {
+    display: block;
+    width: 35vw;
+    margin-left: 5vw;
+  
+  }
+  .nav_mobile > .nav {
+    color: aliceblue !important;
+    border: black;
+    font-size: .8rem;
+  }
+  .btn_mobile {
+    max-width: 95vw;
+    color: aliceblue; 
+    background: #000;    
+    border: none;
+  }
+  .btn_mobile::after {
+    content: "";
+    display: inline-block;
+    width: 18vw;
+    height: 0.5vw;
+    background: linear-gradient(270deg, var(--grad-1) 0%, var(--grad-2) 100%);
+    position: relative;
+    left: 0.5vw;
+    bottom: 0;
+  }
+  .btn_mobile:hover {
+    border-radius: 0.5rem 0 0.3rem;
+    background: linear-gradient(270deg, var(--grad-3) 0%, var(--grad-4) 100%);
+  }
+  .btn_mobile:focus {
+    border-radius: 0.5rem 0 0.3rem;
+    background-color: rgba(244, 232, 237, 0.053);
+  }
+  main nav {
+    margin: 5% !important;
+  }
+  .nav {
+    flex-direction: column;
+    display: flex;
+    
+  }
+}
+
+@media screen and (max-height: 680px) {
+  .nav {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+  }
+  .btn_mobile {
+    margin: 0;
+  }
+}

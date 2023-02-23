@@ -1,0 +1,13 @@
+footer {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .foot_mobile {
+    background: #000 !important;
+    color: aliceblue !important;
+    position: fixed;
+    bottom: 5vw;
+    right: 5vw;
+    text-align: start !important;
+  }
+}

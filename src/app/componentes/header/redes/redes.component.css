@@ -1,0 +1,128 @@
+
+.container-icons {
+  max-width: 1200px;  
+  position: absolute;
+  bottom: 10px;
+  right: 3.5vw;
+  z-index: 99999;
+}
+.icon-addthis {
+  font-size: 155px;
+  transition: all 300ms;
+}
+.container-icons:hover .icon-addthis {
+  transform: rotate(180deg);
+}
+.row-icons {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 300ms;
+  opacity: 0;
+  padding: 5px;
+}
+.container-icons:hover .row-icons {
+  opacity: 1;
+}
+.row-icons h4 {
+  transform: translate(-10px, 10px);
+  height: 73px;
+  font-weight: 300;
+  padding: 12px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: transparent;
+}
+.row-icons label {
+  font-size: 40px;
+}
+.icon1 {
+  transform: translate(622px, -40px);
+  background-color: transparent;
+}
+.icon2 {
+  transform: translate(696px, -90px);
+}
+.icon3 {
+  transform: translate(696px, -180px);
+}
+.icon4 {
+  transform: translate(696px, -250px);
+}
+a > div:hover {
+  background-image: linear-gradient(
+    transparent 30%,
+    skyblue 30%,
+    skyblue 80%,
+    transparent 80%
+  );
+}
+.container-icons:hover .icon1 {
+  transform: translate(-142px, -0px) scale(1);
+  border-left: solid 3px;
+}
+.container-icons:hover .icon2 {
+  transform: translate(-142px, -50px) scale(1);
+  border-left: solid 3px;
+}
+.container-icons:hover .icon3 {
+  transform: translate(-142px, -100px) scale(1);
+  border-left: solid 3px;
+}
+.container-icons:hover .icon4 {
+  transform: translate(-142px, -150px) scale(1);
+  border-left: solid 3px;
+}
+
+
+.redes_mobile {
+  display: none;
+}
+@media screen and (max-width: 950px) {
+  .container-icons:hover .icon1 {
+    transform: translate(-90px, -50px) scale(1);
+    border-left: solid 3px;
+  }
+  .container-icons:hover .icon2 {
+    transform: translate(-90px, -100px) scale(1);
+    border-left: solid 3px;
+  }
+  .container-icons:hover .icon3 {
+    transform: translate(-90px, -150px) scale(1);
+    border-left: solid 3px;
+  }
+  .container-icons:hover .icon4 {
+    transform: translate(-90px, -200px) scale(1);
+    border-left: solid 3px;
+  }
+  .row-icons h4 {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .redes_mobile {
+    position: fixed;
+    right: 0;
+    top: 6vw;
+    display: flex;
+    flex-direction: column;
+    height: 32vw;
+    width: 40px;
+    border: 1px solid red;
+    border-radius: 2px;
+  }
+  i:hover {
+    color: rgb(207, 10, 237);
+    font-size: 20px;
+  }
+
+  .icon-addthis {
+    display: none;
+  }
+  .nav_mobile > .nav {
+    margin: 3vw 1vw;
+    color: aliceblue !important;
+    border: black;
+  }
+}

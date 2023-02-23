@@ -1,0 +1,27 @@
+@media screen and (max-width: 800px) {
+  .deco2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+  .gradient1 {
+    stop-color: var(--grad-1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .gradient2 {
+    stop-color: var(--grad-2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hover .gradient1 {
+    stop-color: var(--grad-2);
+  }
+
+  .hover .gradient2 {
+    stop-color: var(--grad-1);
+  }
+}
+.deco2{
+    display: none;
+}

@@ -1,0 +1,50 @@
+<ul>
+    <li *ngFor="let curso of cursos">{{curso.instituto}} <br> {{curso.titulo}}
+        <div *ngIf="isLoggedIn" class="btnEdit">
+            <!-- Button trigger modal   botones eliminar y editar -->
+            <button (click)="deleteCurso(curso.id)" class="btn btn-danger">
+                <span><i class="fa-solid fa-trash-can"></i></span>
+            </button>
+            <button (click)="loadEditData(curso.id)" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#modal_curso"><i class="fa-solid fa-pen"></i></button>
+        </div>
+    </li>
+</ul>
+
+<!-- modal_curso -->
+<div *ngIf="isLoggedIn" class="modal fade" id="modal_curso" tabindex="-1" aria-labelledby="modal_curso" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal_curso">Curso</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="saveCurso()">
+                    <div class="mb-3">
+                        <label for="institutoCursoMb">instituto:</label>
+                        <input id="institutoCursoMb" class="form-control" name="institutoCursoMb" formControlName="instituto"
+                            [ngClass]="{'is-invalid':Instituto?.errors && Instituto?.touched, 'is-valid':!Instituto?.errors && Instituto?.touched}">
+                        <div *ngIf="Instituto?.errors && Instituto?.touched">
+                            <p *ngIf="Instituto?.hasError('required')" class="text-danger">
+                                Campo obligatorio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="finMb">Fecha Fin:</label>
+                        <input type="date" id="finMb" class="form-control" name="finMb" formControlName="fin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-textcur" class="col-form-label">Descripcion titulo:</label>
+                        <textarea class="form-control" id="message-textcur" name="titulo" formControlName="titulo"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button [disabled]="form.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

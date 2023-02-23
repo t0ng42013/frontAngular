@@ -1,0 +1,23 @@
+<!-- barra login -->
+<nav class="bg-blur fixed-top mobile_nav">
+    <div>
+        <a class="navbar-brand" target="_blank" href="#">
+            <img class="img_argp" src="./assets/img/arg-programa.png" alt="arg-programa" width="150" height="52">
+        </a>
+    </div>
+    <!-- boton contraste -->
+    <div (click)="toggleContrast()" class="btnContras"> <i class="fa-solid fa-circle-half-stroke"></i> </div>
+    <!-- BOTON LOGIN -->
+<ng-template #notShow>
+
+    <div  class="login">
+        <button class="btn btn-outline-primary btn_login" type="button" data-bs-toggle="modal"
+            data-bs-target="#nav_login">Login</button>
+    </div>
+</ng-template>
+    <div *ngIf="isLoggedIn;else notShow">
+        <button (click)="cerrar()" class="btn btn-lg btn-primary btnEdit"><i class="fa-solid fa-user-lock"></i></button>
+    </div>
+
+
+</nav>

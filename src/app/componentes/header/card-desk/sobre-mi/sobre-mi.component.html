@@ -1,0 +1,100 @@
+<!-- card-acerca desktop -->
+<div class="tab-pane fade show active" id="nav-acerca" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+
+    <div *ngFor="let person of personas" class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4 logo_mobile">
+                <img src="{{person.url}}" class="img-fluid rounded-circle m-5" alt="foto perfil">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+
+                    <div class="card-body-desk">
+                        <div *ngIf="isLoggedIn" class="btnEdit">
+                            <!-- Button trigger modal   botones eliminar y editar -->
+                            <button (click)="resetForm()" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modal_about4"><i class="fa-solid fa-plus"></i></button>
+                            <button (click)="deletePersona(person.id)" class="btn btn-danger">
+                                <span><i class="fa-solid fa-trash-can"></i></span>
+                            </button>
+                            <button (click)="loadEditData(person.id)" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modal_about4"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+                        <h5 class="card-title">{{person.nombre}} {{person.apellido}}</h5>
+                        <p id="modAcerca" class="card-text"> {{person.titulo}} <br>{{person.sobreMi}}</p>
+                    </div>
+                    <p class="card-text"><small class="text-muted">Last updated {{ personas[0].lastUpdated |
+                            date:'dd/MM/yyyy' }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal_about -->
+<div *ngIf="isLoggedIn" class="modal fade modales " id="modal_about4" tabindex="-1" aria-labelledby=" modal_about4"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id=" modal_about4">Editar </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="savePersona()">
+
+                    <div class="d-flex gap-1">
+                        <div>
+                            <label for="nombreSobreMi"> Nombre<span class="text-danger ">* obligatorio</span></label>
+                            <div class="input-group">
+                                <input id="nombreSobreMi" class="form-control" name="nombreSobreMi" formControlName="nombre"
+                                    [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}">
+                                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                    <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                                        Campo obligatorio.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label> apellido<span class="text-danger">*obligatorio</span></label>
+                            <div class="input-group">
+                                <input id="apellido" class="form-control" name="apellido" formControlName="apellido"
+                                    [ngClass]="{'is-invalid':Apellido?.errors && Apellido?.touched, 'is-valid':!Apellido?.errors && Apellido?.touched}">
+                                    <div *ngIf="Apellido?.errors && Apellido?.touched">
+                                        <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                                            Campo obligatorio.
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label> sobreMi</label>
+                        <div class="input-group">
+                            <textarea class="form-control" id="sobreMi" name="sobreMi"
+                                formControlName="sobreMi"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-1">
+                        <div>
+                            <label> url</label>
+                            <div class="input-group">
+                                <input id="url" class="form-control" name="url" formControlName="url">
+                            </div>
+                        </div>
+                        <div>
+                            <label> titulo</label>
+                            <div class="input-group">
+                                <input id="titulo" class="form-control" name="titulo" formControlName="titulo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                        <button  [disabled]="form.invalid" data-bs-dismiss="modal" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

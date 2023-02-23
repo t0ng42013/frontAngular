@@ -1,0 +1,61 @@
+<!-- proyectos -->
+<div class="proyect">
+    <h2 class="text-center bg-secondary mb-3">Proyectos</h2><br>
+    <div class="proyectos">
+        <div *ngFor="let proyecto of proyectos" class="img text-center" style="--i:{{proyecto.variableI}}; --img:url({{proyecto.imgUrl}})">
+            <!-- card proyectos -->
+            <div class="card card__proyect">
+                <div class="card-body proyec_desk">
+                    <!-- Button trigger modal -->
+                <div *ngIf="isLoggedIn" class="">
+                    <!-- Button trigger modal   botones y editar -->                    
+                    <button (click)="loadedit(proyecto.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_proyecto4"><i
+                            class="fa-solid fa-pen"></i></button>
+                </div>
+                    <h5 class="card-title">{{proyecto.nombre}}</h5>
+                    <p class="card-text">{{proyecto.descripcion}}</p>
+                </div>
+            </div>
+        </div>    
+</div>
+
+
+<!-- modal_proyecto-->
+<div  *ngIf="isLoggedIn" class="modal modam fade" id="modal_proyecto4" tabindex="-1" aria-labelledby="modal_proyecto4" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal_skill">Proyecto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="SaveEmployee()">
+                 
+                    <div class="mb-3">
+                        <label>Nombre proyecto: <span class="text-danger ">* obligatorio</span></label>
+                        <input name="nombre" formControlName="nombre" type="text" class="form-control" id="nombre"
+                        [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}">
+                                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                    <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                                        Campo obligatorio.
+                                    </p>
+                                </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pro" class="col-form-label">Descripcion:</label>
+                        <textarea class="form-control" id="pro" name="descripcion" formControlName="descripcion"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>URL imagen:</label>
+                        <input id="imgUrl" class="form-control" name="imgUrl" formControlName="imgUrl">
+                    </div>
+                   
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                        <button [disabled]="form.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+header {
+  overflow: hidden;
+  position: relative;
+}
+
+@media only screen and (max-width: 800px) {
+  .desk {   
+    display: none;
+  }
+  header{
+     height: 400px;
+     overflow: hidden;    
+  }
+}
+

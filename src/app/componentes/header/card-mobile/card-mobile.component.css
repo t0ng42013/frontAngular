@@ -1,0 +1,8 @@
+.card_mob{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin-left: auto;  
+   font-size: 1rem;
+}

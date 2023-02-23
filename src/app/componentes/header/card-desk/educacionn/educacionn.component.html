@@ -1,0 +1,98 @@
+<!-- card-edu -->
+<div class="tab-pane fade mx-auto card_desktop" id="nav-edu" role="tabpanel" aria-labelledby="nav-edu-tab" tabindex="2">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div>
+                <div class="card-body" style="width: 32rem;">
+                    <h5 class="card-title text-center">Educación</h5>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Titulos:
+                                    <div *ngIf="isLoggedIn" class="btnEdit">
+                                        <!-- Button trigger modal -->
+                                        <button (click)="resetForm()" class="btn btn-primary t p-0" data-bs-toggle="modal"
+                                            data-bs-target="#modal_edu4"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li *ngFor="let educacion of educacion">
+                                            <div *ngIf="isLoggedIn" class="">
+                                                <!-- Button trigger modal   botones eliminar y editar -->
+                                                <button (click)="deleteEducacion(educacion.id)" class="btn btn-danger">
+                                                    <span><i class="fa-solid fa-trash-can"></i></span>
+                                                </button>
+                                                <button (click)="loadEditData(educacion.id)" class="btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_edu4"><i
+                                                        class="fa-solid fa-pen"></i></button>
+                                            </div>
+                                            {{educacion.instituto}}
+                                            {{educacion.titulo}}.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <app-cursos></app-cursos>
+                    </div>
+                    <!-- fin acordeon -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal_edu -->
+<div *ngIf="isLoggedIn" class="modal fade" id="modal_edu4" tabindex="-1" aria-labelledby="modal_edu" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal_exp">Educación</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="saveEducacion()">
+
+                    <div>
+                        <label>instituto:<span class="text-danger ">* obligatorio</span></label>
+                        <input id="instituto" class="form-control" name="instituto" formControlName="instituto"
+                            [ngClass]="{'is-invalid':Instituto?.errors && Instituto?.touched, 'is-valid':!Instituto?.errors && Instituto?.touched}">
+                        <div *ngIf="Instituto?.errors && Instituto?.touched">
+                            <p *ngIf="Instituto?.hasError('required')" class="text-danger">
+                                Campo obligatorio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-1">
+                        <div>
+                            <label>Fecha inicio:</label>
+                            <input type="date" id="inicio" class="form-control" name="inicio" formControlName="inicio">
+                        </div>
+                        <div>
+                            <label>Fecha Fin:</label>
+                            <input type="date" id="fin" class="form-control" name="fin" formControlName="fin">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="descripcionEdu" class="col-form-label">Descripcion titulo:</label>
+                        <textarea class="form-control" id="descripcionEdu" name="descripcionEdu"
+                            formControlName="titulo"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                        <button [disabled]="form.invalid" class="btn btn-primary"
+                            data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

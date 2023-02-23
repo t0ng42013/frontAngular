@@ -1,0 +1,15 @@
+<header>
+    <div class="desk" *ngIf="!isBelow800px">
+        <app-parallax></app-parallax>
+        <app-login-modal></app-login-modal>
+        
+    </div>
+    <app-nav-login></app-nav-login>
+    <div class="mobile" *ngIf="isBelow800px">
+        <!-- Contenido que solo se muestra cuando el ancho de la ventana es menor a 800 px -->
+        <app-svg-inicio></app-svg-inicio>       
+        <app-login-modal></app-login-modal>
+        <app-card-mobile></app-card-mobile>
+    </div>
+
+</header>

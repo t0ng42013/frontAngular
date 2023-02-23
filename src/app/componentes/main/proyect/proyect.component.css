@@ -1,0 +1,59 @@
+.proyectos {
+  position: relative;
+  width: 28.125rem;
+  height: 21.875rem;
+  left: 20px;
+  transform-style: preserve-3d;
+  animation: image 50s linear infinite;
+}
+.proyect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.proyec_desk > h5,
+.proyec_desk > p {
+  margin: 50px;
+  font-size: 1.5rem;
+  color: #bc2e1e !important;
+  text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4,
+    2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd,
+    3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4,
+    5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd,
+    6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4,
+    8px 7px 0px #5dabcd;
+}
+
+@keyframes image {
+  0% {
+    transform: perspective(150rem) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(150rem) rotateY(360deg);
+  }
+}
+
+div > .card__proyect {
+  width: 100%;
+  height: 100%;
+  background-image: none;
+  background-color: transparent;
+}
+
+.proyectos .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--img);
+  background-size: cover;
+  transform: rotateY(calc(var(--i) * 90deg)) translateZ(15.625rem);
+}
+
+.modalm{
+    width: 90vw;
+    height: 60vh;
+    transform: translate(0%,10%);
+}

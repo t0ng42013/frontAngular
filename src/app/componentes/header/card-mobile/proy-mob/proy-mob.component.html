@@ -1,0 +1,89 @@
+<!-- proyectos-mobile -->
+<div class="tab-pane fade card_mobile" id="nav-proyecto-mobile" role="tabpanel"
+    aria-labelledby="nav-proyecto-tab-movile" tabindex="0">
+    <div class="card mb-3">
+        <div class="card-body">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <!-- carrusel de imagenes -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+
+                </div>
+                <div class="carousel-inner">
+                    <div *ngFor="let proyecto of proyectos let i = index" [ngClass]="{'active':i == 0 }"
+                        class="carousel-item active">
+                <div *ngIf="isLoggedIn" class="text-center btnEdit">
+                    <!-- Button trigger modal   botones y editar -->
+                    <button (click)="loadEditData(proyecto.id)" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modal_proyecto"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                        <img class="img_mobile img-fluid" [src]="proyecto.imgUrl" alt="{{proyecto.nombre}}">
+                        <div class="carousel-caption d-md-block">
+                            <h5 class="text-danger bg-dark border border-danger rounded-pill p-1 fw-bolder">
+                                {{proyecto.nombre}}</h5>
+                            <h6 class="text-danger bg-dark border border-danger rounded-pill p-1 mb-5">
+                                {{proyecto.descripcion}}</h6>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev text-white" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    
+        <!-- modal_proyecto-->
+        <div  *ngIf="isLoggedIn" class="modal fade" id="modal_proyecto" tabindex="-1" aria-labelledby="modal_proyecto" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal_skill">Proyecto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="form" (ngSubmit)="SaveEmployee()">
+                      
+                            <div class="mb-3">
+                                <label>Nombre proyecto:</label>
+                                <input name="nombreProyectoMb" formControlName="nombre" type="text" class="form-control" id="nombreProyectoMb"
+                                 [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}">
+                                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                    <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                                        Campo obligatorio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="col-form-label">Descripcion:</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion"
+                                    formControlName="descripcion"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imgUrlMb">URL imagen:</label>
+                                <input id="imgUrlMb" class="form-control" name="imgUrlMb" formControlName="imgUrl">
+                            
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                                <button [disabled]="form.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

@@ -1,1 +1,323 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-skills-oscuro: #000000;
+  --color-skill-claro: #2bc3f2;
+  --color-card: #07010d;
+  --color-card-deg1: #020107;
+  --color-card-deg2: #09030f;
+  --grad-1: rgb(195, 61, 218);
+  --grad-2: rgb(152, 120, 55);
+  --grad-3: rgb(94, 95, 138);
+  --grad-4: rgb(92, 203, 96);
+  --grad-5: rgb(183, 69, 198);
+  --grad-6: rgb(75, 172, 113);
+  --bs-backdrop-zindex: 9999 !important;
+  --bs-backdrop-bg: #000 !important;
+  --bs-backdrop-opacity: 0 !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.high-contrast {
+  background-color: var(--color-skills-oscuro);
+  color: white;
+}
+/* tarjetas info */
+.tab-pane:not(.active) {
+  display: none;
+}
+/* card desktop  */
+.card {
+  max-width: 35rem;
+  min-width: 25rem;
+  max-height: 14rem;
+  overflow-y: scroll;
+  position: absolute;
+  background: var(--color-card);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-card) 0%,
+    var(--color-card-deg1) 52%,
+    var(--color-card-deg2) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-card) 0%,
+    var(--color-card-deg1) 52%,
+    var(--color-card-deg2) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-card) 0%,
+    var(--color-card-deg1) 52%,
+    var(--color-card-deg2) 100%
+  );
+  color: var(--grad-1);
+}
+/* estilos btn de edicion */
+.btnEdit {
+  display: flex;
+  gap: 12px;
+}
+.btnEdit > .btn {
+  font-size: 15px;
+  padding: 5px;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+  .modal {
+    margin: auto !important;  
+    width: 35rem;
+    height: 30rem; 
+    color: var(--color-card-deg1);   
+    position: absolute !important;
+    bottom:0;
+    left: 50%;   
+    transform: translate(-50%);
+    
+  }
+  .modal-body{
+    background: #6d6d6d;
+    z-index: 99999;
+    flex-wrap: wrap;
+  }
+    .modal:not(.active){
+    display: none;
+  }
+  /* skill */
+.my__skills {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.skillbar {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+}
+
+.skills {
+  width: 40%;
+  color: rgb(16, 78, 201);
+  padding: 0 10px;
+}
+
+.skills p {
+  padding-top: 1.25rem;
+  padding-bottom: 10px;
+}
+
+.skill__cont {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 15px;
+  color: var(--color-card);
+}
+
+.skill {
+  margin-left: 0;
+  text-align: right;
+  border-radius: 15px;
+}
+
+.html {
+  width: 75%;
+  background: var(--color-skills-oscuro);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+}
+.css {
+  width: 70%;
+  background: var(--color-skills-oscuro);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+}
+
+.js {
+  width: 55%;
+  background: var(--color-skills-oscuro);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+}
+
+.bootstrap {
+  width: 60%;
+  background: var(--color-skills-oscuro);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+}
+
+.java {
+  width: 70%;
+  background: var(--color-skills-oscuro);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+}
+
+.angular {
+  width: 75%;
+  background: var(--color-skills-oscuro);
+  /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-skills-oscuro) 0%,
+    var(--color-skill-claro) 51%,
+    var(--color-skills-oscuro) 100%
+  );}
+
+/*  Estilos para menos de 800px */
+@media only screen and (max-width: 799px) {
+    *{
+        font-size: .9rem;
+    }
+  /* card tablet and mobile */
+  .card_mobile {
+    display: flex;
+    width: 85vw;
+    height: 250px;
+    overflow-y: scroll;
+  }
+  .card-body {
+    background-color: var(--color-card);
+  }
+  /* botones */
+  .btnEdit {
+    display: flex;
+    gap: 12px;
+  }
+  .btnEdit > .btn {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .modal {
+    margin: 0;
+    width: 90vw;
+    color: var(--color-card-deg1);   
+    position: fixed !important;
+    top: -0;
+    left: -0;
+    transform: translate(0%, 0%);
+  }
+
+  .modal-body{
+    background: #6d6d6d;
+  }
+}
+

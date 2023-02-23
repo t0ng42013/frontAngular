@@ -1,0 +1,82 @@
+<!-- mobile expe -->
+<div class="tab-pane fade  card_mobile" id="nav-exp-mobile" role="tabpanel" aria-labelledby="nav-acerca-tab-mobile"
+    tabindex="0">
+    <div class="card mb-3">
+        <div class="card-body card-body scroll">
+            <div *ngIf="isLoggedIn">
+                <!-- Button trigger modal -->
+                <button (click)="resetForm()" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#modal_exp"><i class="fa-solid fa-plus btnEdit"></i></button>
+            </div>
+            <h5 class="card-title text-center">Experiencia</h5>
+            <div *ngFor="let experiencia of experiencias">
+
+                <div *ngIf="isLoggedIn" class="btnEdit">
+                    <!-- Button trigger modal   botones eliminar y editar -->
+                    <button (click)="deleteExperiencia(experiencia.id)" class="btn btn-danger">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </button>
+                    <button (click)="loadEditData(experiencia.id)" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modal_exp"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <h5 class="card-title text-white"> {{experiencia.nombreExpMb}}
+                </h5>
+                <p class="card-text text-center text-white">{{experiencia.descripcion1}}</p>
+                <p class="card-text text-center text-white">{{experiencia.descripcion2}}</p>
+                <p class="card-text text-center text-white">{{experiencia.descripcion3}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal_exp -->
+<div *ngIf="isLoggedIn" class="modal fade" id="modal_exp" tabindex="1" aria-labelledby="modal_exp" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal_exp">Experiencia</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formexp" (ngSubmit)="save()">
+             
+                    <div class="mb-3">
+                        <label for="nombreExpMb">Puesto o trabajo:</label>
+                        <input id="nombreExpMb" class="form-control" name="nombreExpMb" formControlName="nombre"
+                         [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}">
+                        <div *ngIf="Nombre?.errors && Nombre?.touched">
+                            <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                                Campo obligatorio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion1" class="col-form-label">Descripcion 1:</label>
+                        <textarea class="form-control" id="descripcion1" name="descripcion1"
+                            formControlName="descripcion1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion2" class="col-form-label">Descripcion 2:</label>
+                        <textarea class="form-control" id="descripcion2" name="descripcion2"
+                            formControlName="descripcion2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion3" class="col-form-label">Descripcion 3:</label>
+                        <textarea class="form-control" id="descripcion3" name="descripcion3"
+                            formControlName="descripcion3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion4" class="col-form-label">Descripcion 4:</label>
+                        <textarea class="form-control" id="descripcion4" name="descripcion4"
+                            formControlName="descripcion4"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button [disabled]="formexp.invalid" class="btn btn-primary"
+                            data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

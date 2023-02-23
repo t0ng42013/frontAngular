@@ -1,0 +1,88 @@
+<!-- mobile Education-->
+<div class="tab-pane fade card_mobile" id="nav-edu-mobile" role="tabpanel" aria-labelledby="nav-edu-tab-movile"
+    tabindex="0">
+    <div class="card mb-3">     
+        <div class="card-body scroll">
+            <div *ngIf="isLoggedIn">
+                <!-- Button trigger modal -->
+                <button (click)="resetForm()" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#modal_edu">
+                    <i class="fa-solid fa-plus btnEdit"></i>
+                </button>
+            </div>
+            <h5 class="card-title text-center fs-5">Educación</h5>
+            <h5 class="card-title text-white fs-5">Titulos:</h5>
+            <h6 class="card-text text-white fs-6">
+                <ul>
+                    <li *ngFor="let educacion of educacion">
+                        <div *ngIf="isLoggedIn" class="btnEdit">
+                            <!-- Button trigger modal   botones eliminar y editar -->
+                            <button (click)="deleteEducacion(educacion.id)" class="btn btn-danger">
+                                <span><i class="fa-solid fa-trash-can"></i></span>
+                            </button>
+                            <button (click)="loadEditData(educacion.id)" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modal_edu"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+                        {{ educacion.instituto }} {{ educacion.titulo }}.
+                    </li>
+                </ul>
+            </h6>
+            <div *ngIf="isLoggedIn">
+                <!-- Button trigger modal -->
+                <button (click)="resetForm()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_curso">
+                    <i class="fa-solid fa-plus btnEdit"></i>
+                </button>
+            </div>
+            <h5 class="card-title text-white fs-5">Cursos:</h5>
+            <h6 class="card-text text-white fs-6">
+                <app-cursos-mob></app-cursos-mob>
+            </h6>
+        </div>
+    </div>
+</div>
+
+<!-- modal_edu -->
+<div  *ngIf="isLoggedIn" class="modal fade" id="modal_edu" tabindex="-1" aria-labelledby="modal_edu" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal_edu">Educación</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="saveEducacion()">
+                
+                    <div class="mb-3">
+                        <label for="institutoEduMb">instituto:</label>
+                        <input id="institutoEduMb" class="form-control" name="institutoEduMb" formControlName="instituto"
+                        [ngClass]="{'is-invalid':Instituto?.errors && Instituto?.touched, 'is-valid':!Instituto?.errors && Instituto?.touched}">
+                        <div *ngIf="Instituto?.errors && Instituto?.touched">
+                            <p *ngIf="Instituto?.hasError('required')" class="text-danger">
+                                Campo obligatorio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inicioEduMb">Fecha inicio:</label>
+                        <input type="date" id="inicioEduMb" class="form-control" name="inicioEduMb" formControlName="inicio">
+                    </div>
+                    <div class="mb-3">
+                        <label for="finEduMb">Fecha Fin:</label>
+                        <input type="date" id="finEduMb" class="form-control" name="finEduMb" formControlName="fin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcionEduMb" class="col-form-label">Descripcion titulo:</label>
+                        <textarea class="form-control" id="descripcionEduMb" name="descripcionEduMb" formControlName="titulo"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Salir
+                        </button>
+                        <button [disabled]="form.invalid" class="btn btn-primary" data-bs-dismiss="modal">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

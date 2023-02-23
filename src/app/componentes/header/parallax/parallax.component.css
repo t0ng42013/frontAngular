@@ -1,0 +1,31 @@
+.parallax {
+  max-width: 1200px;
+  max-height: 750px;
+  margin: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index:500;
+  overflow: hidden;
+}
+.parallax__item {
+  position: absolute;
+  width: 100%;
+  z-index: 550;
+}
+.ani_rotar {
+  animation: ani_rotar 90s linear infinite;
+}
+.ani_scale {
+  animation: ani_scale 15s linear infinite alternate-reverse;
+}
+
+@keyframes ani_rotar {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes ani_scale {
+  100% {
+    transform: scale(1.1);
+  }
+}

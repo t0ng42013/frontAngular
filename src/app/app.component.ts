@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lga-Portfolio';
+    title = 'lga-Portfolio';
+    constructor(private router: Router) {
+        this.router.errorHandler = (error: any) => {
+            this.router.navigate(['/404']); // redirige a la página 404
+        }
+    }
 }

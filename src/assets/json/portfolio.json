@@ -1,0 +1,103 @@
+{
+    "nombre": "Gastón",
+    "apellido": "Alonso",
+    "titulo": "Full Stack Developer Jr.",
+    "acerca": "Mi nombre es Gastón Alonso, soy un desarrollador full stack con sede en Villa Giardino, Córdoba, Argentina. He desarrollado algunas aplicaciones, hasta plataformas de reserva de comercio. Me apasionan las interfaces hermosas, de última generación.",
+    "banner":"",
+    "educacion": [
+        {
+            "Instituto": "Instituto Juana Micono.",
+            "titulo": "Título secundario"
+        },
+        {
+            "Instituto": "Cruz Roja Argentina.",
+            "titulo": "Guardavidas"
+        }
+    ],
+    "cursos": [
+        {
+            "Instituto": "Egg curso de programación",
+            "titulo": "Programación desde 0 con una duracion de 81hs teórico y prácticas."
+        },
+        {
+            "Instituto": "Fundación telefónica Movistar",
+            "titulo": "Programación Java Standar con mas de 40hs de duración"
+        },
+        {
+            "Instituto": "Argentina Programa",
+            "titulo": "#SéProgramar. Completo"
+        },
+        {
+            "Instituto": "Argentina Programa",
+            "titulo": "#YoProgramo. Segunda etapa duracion 7 meses. En curso."
+        }
+    ],
+    "experiencias": [
+        {
+            "puesto": "Taller Mecánico",
+            "tarea1": "Mecánica en general",
+            "tarea2": "Diagnóstico computarizado"
+        },
+        {
+            "puesto": "Guardavidas"
+        },
+        {
+            "puesto": "Programador Full stack",
+            "tarea1": "Maquetación HTML5,CSS3,Bootstrap,Sass",
+            "tarea2": "Desarrollo de página web en HTML, CSS, JavaScript",
+            "tarea3": "Desarrollo de aplicaciones en lenguaje Java"
+        }
+    ],
+    "habilidades": [
+        {
+            "skill": "HTML5",
+            "porcentaje": 75
+        },
+        {
+            "skill": "CSS3",
+            "porcentaje": 70
+        },
+        {
+            "skill": "Javascript",
+            "porcentaje": 55
+        },
+        {
+            "skill": "Bootstrap",
+            "porcentaje": 60
+        },
+        {
+            "skill": "Java",
+            "porcentaje": 70
+        },
+        {
+            "skill": "Angular",
+            "porcentaje": 75
+        }
+    ],
+    "proyectos": [
+        {
+            "titulo": "Odontología",
+            "descripcion": "Página web para una profesional, utilizando HTML, CSS, JS",
+            "img": "./assets/img/img1.jpg",
+            "i": 1
+        },
+        {
+            "titulo": "Piedra,papel,tijera",
+            "descripcion": "Desafio de Frontmentor, desafio para mejorar habilidades de html, css, y js.",
+            "img": "./assets/img/img2.jpg",
+            "i": 2
+        },
+        {
+            "titulo": "Ta Te Tí",
+            "descripcion": "Juego del tatetí desarrollado Java.",
+            "img": "./assets/img/img3.jpg",
+            "i": 3
+        },
+        {
+            "titulo": "Ahorcadoooo",
+            "descripcion": "Juego del Ahorcado desarrollado en Java.",
+            "img": "./assets/img/img4.jpg",
+            "i":4
+        }
+    ]
+}

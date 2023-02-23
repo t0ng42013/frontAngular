@@ -1,0 +1,45 @@
+.tab2 {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {    
+       .nombre_mobile {
+        position: relative;
+        background: #000;
+        width: 50vw; 
+        margin: 0 10vw !important;
+    }
+
+    .nombre_mobile::after {
+  content: "";
+  background: linear-gradient(270deg, var(--grad-1) 0%, var(--grad-2) 100%);
+  border-top-left-radius: 8px;
+  height: 15vw;
+  width: 1vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nombre_mobile::before {
+  content: "";
+  background: linear-gradient(270deg, var(--grad-1) 0%, var(--grad-2) 100%);
+  border-top-left-radius: 8px;
+  height: 1vw;
+  width: 15vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav-link.active,
+.nav-link:focus,
+.nav-link:hover {
+  background: none !important;
+  border: rgb(0, 0, 0);
+}
+.nav{
+    width: 100% !important;
+}
+}

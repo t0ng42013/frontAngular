@@ -1,0 +1,94 @@
+<!-- mobile about -->
+<div class="tab-pane fade show active card_mobile" id="nav-acerca-mobile" role="tabpanel"
+    aria-labelledby="nav-acerca-tab-mobile" tabindex="0">
+
+    <div *ngFor="let person of personas" class="card-body-desk col-md-auto">
+        <div class="card m-1">
+            <div class="row g-0">
+                <div class="col-3 logo_mobile">
+                    <img src="{{person.url}}" class="img-fluid rounded-circle m-1" alt="foto perfil">
+                </div>
+                <div class="col">
+                    <div class="card-body">                       
+                        <div *ngIf="isLoggedIn" class="btnEdit">
+                            <!-- Button trigger modal   botones eliminar y editar -->
+                            <button (click)="deletePersona(person.id)" class="btn btn-danger">
+                                <span><i class="fa-solid fa-trash-can"></i></span>
+                            </button>
+                            <button (click)="loadEditData(person.id)" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modal_about1"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+                        <h5 class="card-title">{{person.nombre}} {{person.apellido}}</h5>
+                        <p id="modAcerca" class="card-text"> {{person.titulo}} <br>{{person.sobreMi}}</p>
+                    </div>
+                    <p class="card-text"><small class="text-muted">Last updated {{ personas[0].lastUpdated |
+                            date:'dd/MM/yyyy' }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal_about -->
+<div *ngIf="isLoggedIn" class="modal fade modales " id="modal_about1" tabindex="-1" aria-labelledby=" modal_about1"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id=" modal_about1">Editar </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="savePersona()">             
+                    <div>
+                        <label for="nombreAbout"> Nombre</label>
+                        <div class="input-group">
+                            <input id="nombreAbout" class="form-control" name="nombreAbout" formControlName="nombre"
+                                [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}">
+                                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                    <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                                        Campo obligatorio.
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label> apellido</label>
+                        <div class="input-group">
+                            <input id="apellido" class="form-control" name="apellido" formControlName="apellido"
+                            [ngClass]="{'is-invalid':Apellido?.errors && Apellido?.touched, 'is-valid':!Apellido?.errors && Apellido?.touched}">
+                            <div *ngIf="Apellido?.errors && Apellido?.touched">
+                                <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                                    Campo obligatorio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label> sobreMi</label>
+                        <div class="input-group">
+                            <input id="sobreMi" class="form-control" name="sobreMi" formControlName="sobreMi">
+                        </div>
+                    </div>
+                    <div>
+                        <label> url</label>
+                        <div class="input-group">
+                            <input id="url" class="form-control" name="url" formControlName="url">
+                        </div>
+                    </div>              
+                    <div>
+                        <label> titulo</label>
+                        <div class="input-group">
+                            <input id="titulo" class="form-control" name="titulo" formControlName="titulo">
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                        <button [disabled]="form.invalid" data-bs-dismiss="modal" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
