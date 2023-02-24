@@ -21,7 +21,8 @@
 }
 .high-contrast {
   background-color: var(--color-skills-oscuro);
-  color: white;
+  color: white !important;
+  
 }
 /* tarjetas info */
 .tab-pane:not(.active) {

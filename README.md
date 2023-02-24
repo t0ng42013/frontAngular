@@ -1,28 +1,44 @@
 # LgaPortfolio
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/t0nga2013/readme/blob/main/LICENSE) 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+# Sobre el proyecto
 
-## Development server
+https://lga-portfolio.web.app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+LgaPortfolio es una aplicación full stack web e mobile construida durante el curso de Argentina programa 2da étapa, [ArgPrograma](https://argentinaprograma.inti.gob.ar).
 
-## Code scaffolding
+La aplicación consiste un portafolio personal, donde muestro algunos de mis proyectos y trabajos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Layout mobile
+![Mobile 1](https://github.com/) ![Mobile 2](https://github.com/)
 
-## Build
+## Layout web
+![Web 1](https://github.com/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Web 2](https://github.com/)
 
-## Running unit tests
+## Modelo conceptual
+![Modelo conceptual](https://github.com/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Tecnologias utilizadas
+## Back end
+- Java java versión >19
+- Spring Boot versión >3.0.2
+- JPA / Hibernate
+- JWT
+- Maven
+## Front end
+- HTML / CSS / JS / TypeScript
+- Bootstrap
+- Angular
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+## Implantación en producción
+- Back end: Render
+- Front end web: Firebase
+- Banco de dados: CleverCloud
 
-## Running end-to-end tests
+# Autor
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Alonso Luis Gastón
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# frontAngular
+https://www.linkedin.com/in/gast%C3%B3n-alonso-4a70a1217/
