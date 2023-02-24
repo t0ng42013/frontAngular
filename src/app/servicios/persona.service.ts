@@ -13,7 +13,7 @@ export class PersonaService {
 
     constructor(private httpClient: HttpClient) { }
 
-    lista(): Observable<Persona[]> {
+    lista(): Observable<Persona[]> {      
         return this.httpClient.get<Persona[]>(this.baseUrl + 'lista')
             .pipe(
                 catchError(this.handleError<Persona[]>('lista', []))
