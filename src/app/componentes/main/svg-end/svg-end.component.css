@@ -1,3 +1,7 @@
+
+.deco2{
+    display: none;
+}
 @media screen and (max-width: 800px) {
   .deco2 {
     position: fixed;
@@ -21,7 +25,4 @@
   .hover .gradient2 {
     stop-color: var(--grad-1);
   }
-}
-.deco2{
-    display: none;
 }
