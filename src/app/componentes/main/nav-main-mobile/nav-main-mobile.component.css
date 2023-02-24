@@ -1,7 +1,6 @@
 .tab2 {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 50%;  
+  display: flex;  
+  width: 50%;
 }
 
 .nav_mobile {
@@ -13,17 +12,16 @@
     display: block;
     width: 35vw;
     margin-left: 5vw;
-  
   }
   .nav_mobile > .nav {
     color: aliceblue !important;
     border: black;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   .btn_mobile {
     max-width: 95vw;
-    color: aliceblue; 
-    background: #000;    
+    color: aliceblue;
+    background: #000;
     border: none;
   }
   .btn_mobile::after {
@@ -50,11 +48,13 @@
   .nav {
     flex-direction: column;
     display: flex;
-    
   }
 }
 
 @media screen and (max-height: 680px) {
+  .nav_mobile {
+    width: 80vw;
+  }
   .nav {
     flex-direction: row;
     display: flex;
@@ -62,5 +62,7 @@
   }
   .btn_mobile {
     margin: 0;
+    height: 20vw;
+    width: 25vw;
   }
 }
