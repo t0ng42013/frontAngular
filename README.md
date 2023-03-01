@@ -10,15 +10,17 @@ LgaPortfolio es una aplicación full stack web e mobile construida durante el cu
 La aplicación consiste un portafolio personal, donde muestro algunos de mis proyectos y trabajos.
 
 ## Layout mobile
-![Mobile 1](https://github.com/) ![Mobile 2](https://github.com/)
+![Mobile 1](https://github.com/t0ng42013/assets/blob/master/jwt-mov.png) ![Mobile 2](https://github.com/t0ng42013/assets/blob/master/movil2.png)
 
 ## Layout web
-![Web 1](https://github.com/)
+![Web 1](https://github.com/t0ng42013/assets/blob/master/jwt-web1.png)
 
-![Web 2](https://github.com/)
+![Web 2](https://github.com/t0ng42013/assets/blob/master/web1.png)
+
+![Web 3](https://github.com/t0ng42013/assets/blob/master/web2.png)
 
 ## Modelo conceptual
-![Modelo conceptual](https://github.com/)
+![Modelo conceptual](https://github.com/t0ng42013/assets/blob/master/modeloConceptual.png)
 
 # Tecnologias utilizadas
 ## Back end
