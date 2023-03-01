@@ -1,5 +1,4 @@
 # LgaPortfolio
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/t0nga2013/readme/blob/main/LICENSE) 
 
 # Sobre el proyecto
 
