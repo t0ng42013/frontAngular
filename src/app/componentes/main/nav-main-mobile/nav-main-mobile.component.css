@@ -19,7 +19,7 @@
     font-size: 0.8rem;
   }
   .btn_mobile {
-    max-width: 95vw;
+    max-width: 90vw;
     color: aliceblue;
     background: #000;
     border: none;
@@ -27,7 +27,7 @@
   .btn_mobile::after {
     content: "";
     display: inline-block;
-    width: 18vw;
+    width: 20vw;
     height: 0.5vw;
     background: linear-gradient(270deg, var(--grad-1) 0%, var(--grad-2) 100%);
     position: relative;

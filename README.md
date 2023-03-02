@@ -23,8 +23,8 @@ La aplicación consiste un portafolio personal, donde muestro algunos de mis pro
 
 # Tecnologias utilizadas
 ## Back end
-- Java java versión >19
-- Spring Boot versión >3.0.2
+- Java java versión 19
+- Spring Boot versión 3.0.2
 - JPA / Hibernate
 - JWT
 - Maven
