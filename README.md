@@ -43,3 +43,7 @@ La aplicación consiste un portafolio personal, donde muestro algunos de mis pro
 Alonso Luis Gastón
 
 https://www.linkedin.com/in/gast%C3%B3n-alonso-4a70a1217/
+
+# Nota
+
+Tuve problemas con el otro repo, cree uno nuevo y pase en limpio en el github se puede ver los otros repo de como venia trabajando
